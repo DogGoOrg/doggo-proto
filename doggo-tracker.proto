@@ -1,0 +1,17 @@
+syntax = "proto3";
+package accountService;
+
+service TrackerService {
+
+    rpc AddPoint(AddPointReq) (AddPointRes) {}
+}
+
+message AddPointReq {
+    float lat = 1;
+    float lon = 2;
+}
+
+message AddPointRes {
+    string id = 1;
+    string info = 2
+}
