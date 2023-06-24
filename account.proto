@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "/Account";
+package Account;
+
+service Account {
+
+    rpc GetAccountById(GetAccountRequest) returns (GetAccountResponse) {};
+};
+
+message GetAccountRequest {
+    string id = 1;
+};
+
+message GetAccountResponse {
+    string id = 1;
+    string info = 2;
+};

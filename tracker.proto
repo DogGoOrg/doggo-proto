@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "/Tracker";
+package Tracker;
+
+service Tracker {
+    rpc AddPoint(AddPointReq) returns (AddPointRes) {};
+};
+
+message AddPointReq {
+    int32 lat = 1;
+    int32 lon = 2;
+};
+
+message AddPointRes {
+    string id = 1;
+    string info = 2;
+};
