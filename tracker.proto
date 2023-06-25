@@ -4,6 +4,9 @@ package Tracker;
 
 service Tracker {
     rpc AddPoint(AddPointReq) returns (AddPointRes) {};
+
+    //default ping response for microservice
+    rpc Ping(PingRequest) returns (PingResponse) {};
 };
 
 message AddPointReq {
@@ -14,4 +17,10 @@ message AddPointReq {
 message AddPointRes {
     string id = 1;
     string info = 2;
+};
+
+message PingRequest {};
+
+message PingResponse {
+    string status = 1;
 };
