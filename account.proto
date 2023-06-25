@@ -5,6 +5,9 @@ package Account;
 service Account {
 
     rpc GetAccountById(GetAccountRequest) returns (GetAccountResponse) {};
+
+    rpc Ping(PingRequest) returns (PingResponse) {};
+
 };
 
 message GetAccountRequest {
@@ -14,4 +17,10 @@ message GetAccountRequest {
 message GetAccountResponse {
     string id = 1;
     string info = 2;
+};
+
+message PingRequest {};
+
+message PingResponse {
+    string status = 1;
 };
