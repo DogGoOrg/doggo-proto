@@ -43,7 +43,7 @@ message LogoutRequest {
 };
 
 message LogoutResponse {
-    string token = 1;
+    string status = 1;
 };
 
 message RefreshRequest {
