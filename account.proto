@@ -12,6 +12,8 @@ service Account {
 
     rpc Refresh(RefreshRequest) returns (RefreshResponse) {};
 
+    rpc Register(RegisterRequest) returns (RegisterResponse) {};
+
     //default ping response for microservice
     rpc Ping(PingRequest) returns (PingResponse) {};
 
@@ -53,6 +55,15 @@ message RefreshRequest {
 message RefreshResponse {
     string accessToken = 1;
     string refreshToken = 2;
+};
+
+message RegisterRequest {
+    string email = 1;
+    string password = 2;
+};
+
+message RegisterResponse {
+    string status = 1;
 };
 
 message PingRequest {};
