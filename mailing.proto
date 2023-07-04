@@ -1,0 +1,28 @@
+syntax = "proto3";
+option go_package = "/mailing";
+package mailing;
+
+service Mailing {
+
+    rpc SendActivationMail(SendMailRequest) returns (SendMailResponse);
+
+    //default ping response for microservice
+    rpc Ping(PingRequest) returns (PingResponse) {};
+
+};
+
+message SendActivationMailRequest {
+    string link = 1;
+    required string email = 2;
+};
+
+message SendActivationMailResponse {
+    bool success = 1;
+    optional string reason = 2;
+};
+
+message PingRequest {};
+
+message PingResponse {
+    string status = 1;
+};

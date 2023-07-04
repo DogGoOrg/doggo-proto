@@ -14,6 +14,12 @@ service Account {
 
     rpc Register(RegisterRequest) returns (RegisterResponse) {};
 
+    rpc VerifyRefreshToken(VerifyRefreshTokenRequest) returns (VerifyRefreshTokenResponse) {};
+
+    rpc VerifyAccessToken(VerifyAccessTokenRequest) returns (VerifyAccessTokenResponse) {};
+
+    rpc CheckAuthorization(CheckAuthorizationRequest) returns (CheckAuthorizationResponse) {};
+
     //default ping response for microservice
     rpc Ping(PingRequest) returns (PingResponse) {};
 
@@ -64,6 +70,31 @@ message RegisterRequest {
 
 message RegisterResponse {
     string status = 1;
+};
+
+message VerifyRefreshTokenRequest {
+    required string token = 1;
+};
+
+message VerifyRefreshTokenResponse {
+    bool status = 1;
+};
+
+message VerifyAccessTokenRequest {
+    required string token = 1;
+};
+
+message VerifyAccessTokenResponse {
+    bool status = 1;
+};
+
+message CheckAuthorizationRequest {
+    required string accessToken = 1;
+};
+
+message CheckAuthorizationResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
 };
 
 message PingRequest {};
