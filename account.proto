@@ -69,7 +69,7 @@ message RegisterResponse {
 };
 
 message CheckAuthorizationRequest {
-    required string accessToken = 1;
+    string accessToken = 1;
 };
 
 message CheckAuthorizationResponse {
