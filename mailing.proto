@@ -4,7 +4,7 @@ package mailing;
 
 service Mailing {
 
-    rpc SendActivationMail(SendMailRequest) returns (SendMailResponse);
+    rpc SendActivationMail(SendActivationMailRequest) returns (SendActivationMailResponse);
 
     //default ping response for microservice
     rpc Ping(PingRequest) returns (PingResponse) {};
