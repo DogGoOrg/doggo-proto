@@ -13,7 +13,7 @@ service Mailing {
 
 message SendActivationMailRequest {
     string link = 1;
-    required string email = 2;
+    string email = 2;
 };
 
 message SendActivationMailResponse {
